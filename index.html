@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <i class="fa-sharp-duotone fa-solid fa-badge-check"></i>
+    <link rel="stylesheet" href="style.css">
+    <title>Form Validation</title>
+</head>
+<body>
+<div class="card">
+        <div class="icon-circle">
+            <i class="fa-brands fa-telegram"></i>
+        </div>
+    <form id="myForm">
+
+        <div class="field">
+            <label for="fname">Full Name</label>
+            <input type="text" id="full_name" placeholder="Enter your name">
+            <span id="name-error"></span>
+        </div>
+
+        <div class="field">
+            <label for="phone">Phone</label>
+            <input type="number" id="phone" placeholder="023 456 9878">
+            <span id="phone-error"></span>
+        </div>
+
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter email">
+            <span id="email-error"></span>
+        </div>
+
+        <div class="field textarea-field">
+            <label for="comment">Message</label>
+            <textarea id="comment" rows="5" placeholder="Enter your message"></textarea>
+            <span id="message-error"></span>
+        </div>
+        <button type="submit" id="submitBtn">Submit</button>
+        <span id="submit-error"></span>
+    </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
