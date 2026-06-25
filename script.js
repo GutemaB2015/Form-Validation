@@ -1,9 +1,9 @@
 
 const nameError = document.getElementById('name-error');
 const phoneError = document.getElementById('phone-error');
-const emailError = document.getElementById('emailError');
+const emailError = document.getElementById('email-error');
 const messageError = document.getElementById('message-error');
-const form = document.getElementById('myForm');
+const submitBtn = document.getElementById('submitBtn');
 const submitError = document.getElementById('submit-error');
 
 const fullName = document.getElementById('full_name');
@@ -92,6 +92,7 @@ email.addEventListener('input', emailValidator);
 message.addEventListener('input', messageValidator);
 
 function submitValidation() {
+    
 
     if (
         !nameValidator() ||
@@ -99,21 +100,16 @@ function submitValidation() {
         !emailValidator() ||
         !messageValidator()
     ) {
-        submitError.style.display = 'block';
-        submitError.innerHTML = "Please fix errors before submitting";
-
-        setTimeout(() => {
-            submitError.style.display = "none";
-        }, 2000);
-
-        return false;
+    submitError.innerHTML = "Form not submitted. Please fix errors before submitting";
+        setTimeout(function () {
+            submitError.innerHTML = "";
+    }, 3000);
+            // return false;
     }
-
-    return true;
+            return true;
 }
 
-form.addEventListener('submit', function (e) {
-    if (!submitValidation()) {
-        e.preventDefault();
-    }
-});
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    submitValidation();
+})
