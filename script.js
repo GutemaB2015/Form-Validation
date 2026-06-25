@@ -5,11 +5,13 @@ const emailError = document.getElementById('email-error');
 const messageError = document.getElementById('message-error');
 const submitBtn = document.getElementById('submitBtn');
 const submitError = document.getElementById('submit-error');
+const formData = document.getElementById('myForm');
 
 const fullName = document.getElementById('full_name');
 const phone = document.getElementById('phone');
 const email = document.getElementById('email');
 const message = document.getElementById('comment');
+const successMessage = document.getElementById('successMessage');
 
 
 const nameRegex = /^[A-Za-z]+\s[A-Za-z]+$/;
@@ -104,12 +106,17 @@ function submitValidation() {
         setTimeout(function () {
             submitError.innerHTML = "";
     }, 3000);
-            // return false;
+            return false;
     }
+    successMessage.innerHTML = "Form submitted successfully";
+    setTimeout(function () {
+            location.reload();
+    }, 1500);
             return true;
 }
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     submitValidation();
-})
+    formData.reset();
+});

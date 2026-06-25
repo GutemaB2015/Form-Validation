@@ -114,6 +114,10 @@ button:hover {
     color: red;
 }
 
+#successMessage{
+    color: green;
+}
+
 #message-error{
     margin-top: 15px;
 }
